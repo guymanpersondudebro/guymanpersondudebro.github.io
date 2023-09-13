@@ -2,20 +2,57 @@
 <html>
 <head>
   <title>Infinite GIF Loop</title>
-</head>
-<body>
-  <img id="gif" src="<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif" alt="Your GIF">
-  <script>
-    // Function to create an infinite loop
-    function loopGif() {
-      var gif = document.getElementById('gif');
-      gif.src = gif.src; // Reset the source to the same GIF
-      gif.addEventListener('load', function() {
-        setTimeout(loopGif, 0); // Change the delay (in milliseconds) as needed
-      });
+  <style>
+    /* Centering the container */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    loopGif(); // Start the infinite loop
+    /* Styling for the GIFs */
+    .gif-container {
+      text-align: center;
+    }
+
+    .gif {
+      display: block;
+      margin: 20px auto; /* Adjust the spacing between GIFs */
+    }
+  </style>
+</head>
+<body>
+  <div class="gif-container">
+    <div id="gif-wrapper"></div>
+  </div>
+
+  <script>
+    // URLs of the GIFs
+    const gifURLs = [
+      "https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif",
+      "https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif",
+      // Add more URLs as needed
+    ];
+
+    const gifWrapper = document.getElementById("gif-wrapper");
+
+    // Function to create an infinite loop of GIFs
+    function createInfiniteLoop() {
+      gifURLs.forEach((url) => {
+        const gif = document.createElement("img");
+        gif.src = url;
+        gif.className = "gif";
+        gifWrapper.appendChild(gif);
+      });
+     
+      // Clone the GIFs and append them to create an infinite loop
+      const gifClone = gifWrapper.cloneNode(true);
+      gifWrapper.appendChild(gifClone);
+    }
+
+    createInfiniteLoop(); // Start the infinite loop
   </script>
 </body>
 </html>
