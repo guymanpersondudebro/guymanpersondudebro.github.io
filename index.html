@@ -37,22 +37,24 @@
     ];
 
     const gifWrapper = document.getElementById("gif-wrapper");
+    let currentGifIndex = 0;
 
-    // Function to create an infinite loop of GIFs
-    function createInfiniteLoop() {
-      gifURLs.forEach((url) => {
-        const gif = document.createElement("img");
-        gif.src = url;
-        gif.className = "gif";
-        gifWrapper.appendChild(gif);
-      });
+    // Function to load and display the next GIF
+    function loadNextGif() {
+      const gif = document.createElement("img");
+      gif.src = gifURLs[currentGifIndex];
+      gif.className = "gif";
+      gifWrapper.innerHTML = ''; // Clear the container before adding the next GIF
+      gifWrapper.appendChild(gif);
      
-      // Clone the GIFs and append them to create an infinite loop
-      const gifClone = gifWrapper.cloneNode(true);
-      gifWrapper.appendChild(gifClone);
+      currentGifIndex = (currentGifIndex + 1) % gifURLs.length; // Cycle through the GIFs
     }
 
-    createInfiniteLoop(); // Start the infinite loop
+    // Load the first GIF
+    loadNextGif();
+
+    // Set a timer to load the next GIF every 3 seconds (adjust as needed)
+    setInterval(loadNextGif, 3000); // 3000 milliseconds (3 seconds)
   </script>
 </body>
 </html>
