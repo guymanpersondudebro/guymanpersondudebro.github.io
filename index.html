@@ -1,65 +1,21 @@
-<script>
-var x = document.getElementById("demo");
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Infinite GIF Loop</title>
+</head>
+<body>
+  <img id="gif" src="<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif" alt="Your GIF">
+  <script>
+    // Function to create an infinite loop
+    function loopGif() {
+      var gif = document.getElementById('gif');
+      gif.src = gif.src; // Reset the source to the same GIF
+      gif.addEventListener('load', function() {
+        setTimeout(loopGif, 0); // Change the delay (in milliseconds) as needed
+      });
+    }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-<center><button onclick="getLocation()">Close rickrolls</button></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
-<center><IMG SRC="https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif"></center>
+    loopGif(); // Start the infinite loop
+  </script>
+</body>
+</html>
