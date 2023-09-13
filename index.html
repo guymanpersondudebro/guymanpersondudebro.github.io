@@ -29,6 +29,33 @@
   </div>
 
   <script>
+        // Lyrics of the Rickroll song
+        const lyrics = [
+            "We're",
+            "no",
+            "strangers",
+            "to",
+            "love",
+            "You",
+            "know",
+            "the",
+            "rules",
+            "and",
+            "so",
+            "do",
+            "I",
+            // Add more lyrics here...
+        ];
+
+        let index = 0;
+
+        function displayLyrics() {
+            console.log(lyrics[index]);
+            index = (index + 1) % lyrics.length;
+        }
+
+        // Call the function every second to display lyrics
+        setInterval(displayLyrics, 1000);
     // URLs of the GIFs
     const gifURLs = [
       "https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif",
