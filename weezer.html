@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forum Test</title>
+  <style>
+    /* Centering the container */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Styling for the GIFs */
+    .gif-container {
+      text-align: center;
+    }
+
+    .gif {
+      display: block;
+      margin: 20px auto; /* Adjust the spacing between GIFs */
+    }
+  </style>
+</head>
+<body>
+  <div class="gif-container">
+    <div id="gif-wrapper"></div>
+  </div>
+
+  <script>
+        // Lyrics of the Rickroll song
+        const lyrics = [
+            "weezer",
+            // Add more lyrics here...
+        ];
+
+        let index = 0;
+
+        function displayLyrics() {
+            console.log(lyrics[index]);
+            index = (index + 1) % lyrics.length;
+        }
+
+        // Call the function every second to display lyrics
+        setInterval(displayLyrics, 1000);
+    // URLs of the GIFs
+    const gifURLs = [
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fweezer.com%2Fnews%2F2022%2F3%2F20%2Fsznz-spring-out-now&psig=AOvVaw2RrtCxibjuigbeFGQUMIJe&ust=1695287792103000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKif16ntuIEDFQAAAAAdAAAAABB2",
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fweezer.com%2Fnews%2F2022%2F3%2F20%2Fsznz-spring-out-now&psig=AOvVaw2RrtCxibjuigbeFGQUMIJe&ust=1695287792103000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKif16ntuIEDFQAAAAAdAAAAABB2",
+      // Add more URLs as needed
+    ];
+
+    const gifWrapper = document.getElementById("gif-wrapper");
+    let currentGifIndex = 0;
+
+    // Function to load and display the next GIF
+    function loadNextGif() {
+      const gif = document.createElement("img");
+      gif.src = gifURLs[currentGifIndex];
+      gif.className = "gif";
+      gifWrapper.innerHTML = ''; // Clear the container before adding the next GIF
+      gifWrapper.appendChild(gif);
+     
+      currentGifIndex = (currentGifIndex + 1) % gifURLs.length; // Cycle through the GIFs
+    }
+
+    // Load the first GIF
+    loadNextGif();
+
+    // Set a timer to load the next GIF every 3 seconds (adjust as needed)
+    setInterval(loadNextGif, 3000); // 3000 milliseconds (3 seconds)
+  </script>
+</body>
+</html>
