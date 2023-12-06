@@ -1,0 +1,113 @@
+/* Use CSS Grid to organize the layout */
+#editor-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90% 10%;
+}
+
+/* Use media queries to make the text editor responsive */
+@media (max-width: 600px) {
+    textarea {
+        font-size: 16px;
+    }
+    #toolbar select {
+        font-size: 14px;
+    }
+}
+
+/* Add hover effects and active styles to the buttons */
+#toolbar button:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+#toolbar button:active {
+    background-color: #ccc;
+}
+
+/* Use CSS variables for the theme and font size */
+:root {
+    --main-color: #444;
+    --background-color: #222;
+    --font-size: 18px;
+}
+
+/* Apply dark mode styles as default */
+textarea {
+    color: var(--main-color);
+    background-color: var(--background-color);
+    font-size: var(--font-size);
+    /* Add any other styles you want, such as padding, etc */
+    padding: 20px;
+}
+#toolbar {
+    background-color: var(--background-color);
+    /* Add any other styles you want, such as padding, etc */
+    padding: 10px;
+}
+#toolbar-options, #settings-options {
+    width: 150px;
+}
+
+/* Use the text-shadow and text-transform properties */
+textarea::placeholder {
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #aaa;
+}
+
+/* Use the box-shadow and border-radius properties */
+#editor-container {
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 10px;
+}
+
+/* Use the transition property */
+#settings-options {
+    transition: background-color 0.5s ease;
+}
+
+/* Use the position and z-index properties for a modal dialog */
+#find-replace-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+/* Add styles for the Dyslexia mode */
+#dyslexia-mode {
+    font-family: OpenDyslexic;
+}
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+

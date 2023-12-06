@@ -1,87 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Forum Test</title>
-  <style>
-    /* Centering the container */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    /* Styling for the GIFs */
-    .gif-container {
-      text-align: center;
-    }
-
-    .gif {
-      display: block;
-      margin: 20px auto; /* Adjust the spacing between GIFs */
-    }
-  </style>
+    <title>Text Editor</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-  <div class="gif-container">
-    <div id="gif-wrapper"></div>
-  </div>
-
-  <script>
-        // Lyrics of the Rickroll song
-        const lyrics = [
-            "We're",
-            "no",
-            "strangers",
-            "to",
-            "love",
-            "You",
-            "know",
-            "the",
-            "rules",
-            "and",
-            "so",
-            "do",
-            "I",
-            // Add more lyrics here...
-        ];
-
-        let index = 0;
-
-        function displayLyrics() {
-            console.log(lyrics[index]);
-            index = (index + 1) % lyrics.length;
-        }
-
-        // Call the function every second to display lyrics
-        setInterval(displayLyrics, 1000);
-    // URLs of the GIFs
-    const gifURLs = [
-      "https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif",
-      "https://www.gifcen.com/wp-content/uploads/2022/11/rickroll-gif-1.gif",
-      // Add more URLs as needed
-    ];
-
-    const gifWrapper = document.getElementById("gif-wrapper");
-    let currentGifIndex = 0;
-
-    // Function to load and display the next GIF
-    function loadNextGif() {
-      const gif = document.createElement("img");
-      gif.src = gifURLs[currentGifIndex];
-      gif.className = "gif";
-      gifWrapper.innerHTML = ''; // Clear the container before adding the next GIF
-      gifWrapper.appendChild(gif);
-     
-      currentGifIndex = (currentGifIndex + 1) % gifURLs.length; // Cycle through the GIFs
-    }
-
-    // Load the first GIF
-    loadNextGif();
-
-    // Set a timer to load the next GIF every 3 seconds (adjust as needed)
-    setInterval(loadNextGif, 3000); // 3000 milliseconds (3 seconds)
-  </script>
+<body class="default-theme">
+    <div class="toolbar">
+        <button class="dropdown-btn" id="file-menu-btn">File</button>
+        <div class="dropdown-container" id="file-menu">
+            <a href="#" onclick="saveText()">Save</a>
+            <a href="#" onclick="loadText()">Load</a>
+        </div>
+        <button class="dropdown-btn" id="settings-menu-btn">Settings</button>
+        <div class="dropdown-container" id="settings-menu">
+            <select id="settings-options" onchange="handleSettingChange(event)">
+                <option value="dark-mode">Dark Mode</option>
+                <option value="dyslexia-mode">Dyslexia Mode</option>
+                <option value="font-size">Font Size</option>
+            </select>
+        </div>
+        <button class="dropdown-btn" id="edit-menu-btn">Edit</button>
+        <div class="dropdown-container" id="edit-menu">
+            <a href="#" onclick="undo()">Undo</a>
+            <a href="#" onclick="redo()">Redo</a>
+            <a href="#" onclick="printText()">Print</a>
+            <a href="#" onclick="findAndReplace()">Find and Replace</a>
+        </div>
+    </div>
+    <textarea id="text-input"></textarea>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
