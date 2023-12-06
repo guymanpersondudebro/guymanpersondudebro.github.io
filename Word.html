@@ -1,2 +1,21 @@
 <title>Walmart</title>
 <textarea id="text-input"></textarea>
+<a href="#" onclick="saveText()">Save</a>
+<a href="#" onclick="loadText()">Load</a>
+<script>
+  // JavaScript to handle saving text to local storage
+function saveText() {
+    // code to save text to local storage
+    var text = document.querySelector("textarea").value;
+    localStorage.setItem("savedText", text);
+}
+
+  // JavaScript to handle loading text from local storage
+function loadText() {
+    // code to load text from local storage
+    var savedText = localStorage.getItem("savedText");
+    if (savedText) {
+        document.querySelector("textarea").value = savedText;
+    }
+}
+  </script>
